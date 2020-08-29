@@ -1,0 +1,19 @@
+syntax = "proto3";
+package shopping;
+
+// Service Definition
+service ShoppingList {
+
+  // Sends grocery order
+  rpc OrderGroceries (MessageRequest) returns (MessageReply) {}
+}
+
+// Request for a single shopping item.
+message MessageRequest {
+  string shoppingItem = 1;
+}
+
+// Replies letting the user know if the requested item is in stock
+message MessageReply {
+  bool inStock = 1;
+}
